@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MVC_Webgrid.AspNetUser>
+@{
+    ViewBag.Title = "but";
+}
+
+<hr />
+@{
+    WebGrid wbgrid = new WebGrid(source: Model, rowsPerPage: 5);
+
+}
+
+@wbgrid.GetHtml(
+    tableStyle: "table",
+    htmlAttributes: new { @id = "wbgrid" },
+    columns: wbgrid.Columns(wbgrid.Column("Id", "id"), wbgrid.Column("UserName", "username")
+
+   ))
+
+     
+   

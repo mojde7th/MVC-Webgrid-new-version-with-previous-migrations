@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+
+
+<div class="jumbotron">
+    <center>
+        <h2>نمایش جدول </h2>
+        <p class="lead">کارکنان</p>
+        <input type="button" class="btn btn-primary btn-lg" value="نمایش" onclick="location.href='@Url.Action("but", "Home")'" />
+    </center>
+</div>
+<script>
+    function but() {
+        $.get("/Home/but", function (data) {
+            $("p").html(data);
+        });
+    }</script>
+
+
+
